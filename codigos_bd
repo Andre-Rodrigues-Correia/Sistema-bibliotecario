@@ -1,0 +1,37 @@
+//TABELA USUARIO
+CREATE TABLE usuario (
+    cod_usuario INTEGER NOT NULL GENERATED ALWAYS 
+       AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    nome_usuario VARCHAR(50),
+    senha VARCHAR(16),
+    CONSTRAINT pk_usuario
+        PRIMARY KEY(cod_usuario)
+);
+
+
+//TABELA EXEMPLARES
+CREATE TABLE exemplares (
+    cod_livro INTEGER NOT NULL GENERATED ALWAYS 
+       AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    nome_livro VARCHAR(50) NOT NULL,
+    descricao_livro VARCHAR(100) NOT NULL,
+    qtd_livros INTEGER NOT nULL,
+    CONSTRAINT pk_exemplares
+        PRIMARY KEY (cod_livro)
+);
+
+
+//TABELA EMPRESTIMOS
+CREATE TABLE emprestimos (
+    cod_emprestimo INTEGER NOT NULL GENERATED ALWAYS 
+       AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    cod_livro_emprestado INTEGER NOT NULL,
+    cod_usuario_emprestimo INTEGER NOT NULL,
+    data_emprestimo DATE NOT NULL,
+    data_devolucao DATE NOT NULL,
+    qtd_livros_emprestados INTEGER NOT nULL,
+    CONSTRAINT pk_emprestimos
+        PRIMARY KEY (cod_emprestimo),
+    CONSTRAINT fk_emprestimos
+        FOREIGN KEY (cod_usuario_emprestimo) REFERENCES usuario(cod_usuario)
+);
