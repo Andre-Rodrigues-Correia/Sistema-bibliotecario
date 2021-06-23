@@ -35,7 +35,7 @@ CREATE TABLE exemplares (
 CREATE TABLE emprestimos (
     cod_emprestimo INTEGER NOT NULL GENERATED ALWAYS 
        AS IDENTITY (START WITH 1, INCREMENT BY 1),
-    cod_livro_emprestado INTEGER NOT NULL,
+    nome_livro_emprestado VARCHAR(30) NOT NULL,
     cpf_cliente_emprestimo INTEGER NOT NULL,
     data_emprestimo DATE NOT NULL,
     data_devolucao DATE NOT NULL,
