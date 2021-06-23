@@ -3,9 +3,19 @@ CREATE TABLE usuario (
     cod_usuario INTEGER NOT NULL GENERATED ALWAYS 
        AS IDENTITY (START WITH 1, INCREMENT BY 1),
     nome_usuario VARCHAR(50),
-    senha VARCHAR(16),
+    senha_usuario VARCHAR(16),
     CONSTRAINT pk_usuario
         PRIMARY KEY(cod_usuario)
+);
+
+
+
+//TABELA CLIENTE
+CREATE TABLE cliente (
+    cpf INTEGER NOT,
+    nome_cliente VARCHAR(50),
+    CONSTRAINT pk_cliente
+        PRIMARY KEY(cpf)
 );
 
 
@@ -26,12 +36,12 @@ CREATE TABLE emprestimos (
     cod_emprestimo INTEGER NOT NULL GENERATED ALWAYS 
        AS IDENTITY (START WITH 1, INCREMENT BY 1),
     cod_livro_emprestado INTEGER NOT NULL,
-    cod_usuario_emprestimo INTEGER NOT NULL,
+    cpf_cliente_emprestimo INTEGER NOT NULL,
     data_emprestimo DATE NOT NULL,
     data_devolucao DATE NOT NULL,
     qtd_livros_emprestados INTEGER NOT nULL,
     CONSTRAINT pk_emprestimos
         PRIMARY KEY (cod_emprestimo),
     CONSTRAINT fk_emprestimos
-        FOREIGN KEY (cod_usuario_emprestimo) REFERENCES usuario(cod_usuario)
+        FOREIGN KEY (cpf_cliente_emprestimo) REFERENCES cliente(cpf)
 );
