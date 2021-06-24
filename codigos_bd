@@ -12,7 +12,7 @@ CREATE TABLE usuario (
 
 //TABELA CLIENTE
 CREATE TABLE cliente (
-    cpf INTEGER NOT,
+    cpf VARCHAR(11) NOT NULL,
     nome_cliente VARCHAR(50),
     CONSTRAINT pk_cliente
         PRIMARY KEY(cpf)
