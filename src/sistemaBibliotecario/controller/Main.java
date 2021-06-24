@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistemaBibliotecario.model.database;
+package sistemaBibliotecario.controller;
 
 /**
  *
  * @author Andre
  */
-public class NewClass {
+public class Main {
     
 }

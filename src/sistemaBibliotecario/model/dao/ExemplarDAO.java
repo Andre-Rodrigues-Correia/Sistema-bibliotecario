@@ -33,7 +33,7 @@ public class ExemplarDAO {
     }
 
     public boolean inserir(Exemplares exemplares) {
-        String sql = "INSERT INTO cliente (cod_livro, nome_livro, descricao_livro, qtd_livros) VALUES (?,?,?,?);";
+        String sql = "INSERT INTO exemplares (cod_livro, nome_livro, descricao_livro, qtd_livros) VALUES (?,?,?,?);";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, exemplares.getCod_livro());

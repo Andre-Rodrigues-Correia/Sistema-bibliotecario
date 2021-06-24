@@ -9,15 +9,14 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="499.0" prefWidth="607.0" styleClass="anchor-pane" stylesheets="@estilo_Tela_01.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="sistemaBibliotecario.view.Tela03_ExemplarController">
+<AnchorPane id="AnchorPane" prefHeight="499.0" prefWidth="607.0" styleClass="anchor-pane" stylesheets="@estilo_Tela_01.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemaBibliotecario.view.Tela03_ExemplarController">
    <children>
       <Label layoutX="189.0" layoutY="29.0" text="Sistema Bibliotecário" />
       <Label layoutX="45.0" layoutY="97.0" text="Área Referente a Exemplares:" />
       <TableView layoutX="21.0" layoutY="165.0" prefHeight="314.0" prefWidth="239.0">
         <columns>
-          <TableColumn prefWidth="103.0" text="Código" />
-            <TableColumn prefWidth="135.0" text="Livro" />
+          <TableColumn fx:id="tableView_codigo_livro" prefWidth="103.0" text="Código" />
+            <TableColumn fx:id="tableView_nome_livro" prefWidth="135.0" text="Livro" />
         </columns>
       </TableView>
       <GridPane layoutX="368.0" layoutY="217.0">
@@ -36,16 +35,13 @@
             <Label text="Livro:" GridPane.rowIndex="1" />
             <Label text="Descrição:" GridPane.rowIndex="2" />
             <Label text="Qtd Livros:" GridPane.rowIndex="3" />
-            <Label text="Código" />
-            <Label text="Código:" />
-            <Label GridPane.columnIndex="1" />
-            <Label GridPane.columnIndex="1" />
-            <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="label_codigo_livro" GridPane.columnIndex="1" />
+            <Label fx:id="label_nome_livro" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="label_descricao_livro" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="qtd_livros" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Button layoutX="381.0" layoutY="421.0" mnemonicParsing="false" text="Cadastrar" />
-      <Button layoutX="476.0" layoutY="421.0" mnemonicParsing="false" text="Remover" />
+      <Button fx:id="button_cadastrar_livro" layoutX="381.0" layoutY="421.0" mnemonicParsing="false" text="Cadastrar" />
+      <Button fx:id="button_remover_livro" layoutX="476.0" layoutY="421.0" mnemonicParsing="false" text="Remover" />
    </children>
 </AnchorPane>
