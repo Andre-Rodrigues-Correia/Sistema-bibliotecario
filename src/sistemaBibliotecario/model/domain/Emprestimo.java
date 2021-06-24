@@ -13,6 +13,7 @@ public class Emprestimo implements Serializable{
     private String nome_livro;
     private String cpf_cliente;
     private int cod_emprestimo;
+    private int qtd_livros;
     private Date data_emprestimo;
     private Date data_devolucao;
 
@@ -54,6 +55,14 @@ public class Emprestimo implements Serializable{
 
     public void setData_devolucao(Date data_devolucao) {
         this.data_devolucao = data_devolucao;
+    }
+    
+    public int getQtd_livros() {
+        return qtd_livros;
+    }
+
+    public void setQtd_livros(int qtd_livros) {
+        this.qtd_livros = qtd_livros;
     }
 
    
