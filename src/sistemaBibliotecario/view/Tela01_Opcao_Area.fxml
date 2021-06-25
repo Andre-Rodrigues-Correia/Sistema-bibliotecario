@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="501.0" prefWidth="743.0" styleClass="anchor-pane" stylesheets="@css.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemaBibliotecario.view.Tela_01Controller">
+<AnchorPane id="AnchorPane" prefHeight="501.0" prefWidth="743.0" styleClass="anchor-pane" stylesheets="@css.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemaBibliotecario.controller.Tela01_Opcao_Area_Controller">
    <children>
       <Label layoutX="273.0" layoutY="25.0" text="Sistema Bibliotecário">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="120.0" fitWidth="206.0" layoutX="25.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImageView_Clientes" fitHeight="120.0" fitWidth="206.0" layoutX="25.0" layoutY="258.0" onMouseClicked="#handleAreaCliente" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@user.png" />
          </image>
@@ -21,12 +21,12 @@
       <Label layoutX="99.0" layoutY="216.0" text="Cliente" />
       <Label layoutX="346.0" layoutY="216.0" text="Exemplar" />
       <Label layoutX="582.0" layoutY="216.0" text="Empréstimo" />
-      <ImageView fitHeight="85.0" fitWidth="155.0" layoutX="343.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImageView_Exemplar" fitHeight="85.0" fitWidth="155.0" layoutX="343.0" layoutY="284.0" onMouseClicked="#handleAreaExemplar" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@livro.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="151.0" fitWidth="262.0" layoutX="502.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImageView_Emprestimo" fitHeight="151.0" fitWidth="262.0" layoutX="488.0" layoutY="253.0" onMouseClicked="#handleAreaEmprestimo" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@emprestimo_livro.png" />
          </image>

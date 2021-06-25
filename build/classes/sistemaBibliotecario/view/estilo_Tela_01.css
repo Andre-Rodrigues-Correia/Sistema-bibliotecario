@@ -1,0 +1,49 @@
+.menu-bar{
+    -fx-background-color: #0D9CFA; 
+    -fx-font-size: 8px;
+}
+
+.menu{
+    -fx-font-size: 8px;
+}
+
+.label{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+}
+
+.label.LabelSistema{
+    -fx-font-size: 22pts;
+}
+
+
+.item{
+    -fx-background-color: #557ed9;
+}
+
+.anchor-pane{
+    -fx-background-color: #76C7FC;
+}
+
+.table-view .column-header * {
+    -fx-background-color: #638ce6;
+    -fx-border-style: none;
+}
+
+.button{
+    /*-fx-background-color: #638ce6;*/
+    /*-fx-text-fill: white;*/
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.button.bt_CCliente{
+    -fx-background-image:url("user.png");
+}
+
+.dialog-text{
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}

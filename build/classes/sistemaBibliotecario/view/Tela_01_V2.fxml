@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="501.0" prefWidth="743.0" styleClass="anchor-pane" stylesheets="@css.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="279.0" layoutY="63.0" text="Sistema Bibliotecário">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="120.0" fitWidth="206.0" layoutX="25.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@user.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="99.0" layoutY="216.0" text="Cliente" />
+      <Label layoutX="346.0" layoutY="216.0" text="Exemplar" />
+      <Label layoutX="582.0" layoutY="216.0" text="Empréstimo" />
+      <ImageView fitHeight="85.0" fitWidth="155.0" layoutX="343.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@livro.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="151.0" fitWidth="262.0" layoutX="502.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@emprestimo_livro.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
