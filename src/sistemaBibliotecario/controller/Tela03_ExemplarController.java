@@ -7,7 +7,9 @@ package sistemaBibliotecario.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -15,6 +17,12 @@ import javafx.fxml.Initializable;
  * @author jones
  */
 public class Tela03_ExemplarController implements Initializable {
+    
+    
+    @FXML
+    private Button bt_Cadastrar_Exemplares;
+    @FXML
+    private Button bt_Remover_Exemplares;
 
     /**
      * Initializes the controller class.

@@ -7,14 +7,19 @@ package sistemaBibliotecario.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
  *
  * @author jones
  */
-public class Tela_01Controller implements Initializable {
+public class Tela02_ClienteController implements Initializable {
+
+    @FXML
+    private Label LabelSistema;
 
     /**
      * Initializes the controller class.
