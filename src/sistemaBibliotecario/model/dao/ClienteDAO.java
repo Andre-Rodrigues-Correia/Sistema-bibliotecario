@@ -6,6 +6,7 @@
 package sistemaBibliotecario.model.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
@@ -30,9 +31,21 @@ public class ClienteDAO {
     public void setConnection(Connection connection) {
         this.connection = connection;
     }
+    
+    public ClienteDAO() {
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            String DATABASE_URL = "jdbc:derby://localhost:1527/BD_sistema_bibliotecario";
+            String usuario = "aajw";
+            String senha = "1234";
+            this.connection = DriverManager.getConnection(DATABASE_URL, usuario, senha);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public boolean inserir(Cliente cliente) {
-        String sql = "INSERT INTO cliente (cpf, nome_cliente) VALUES (?,?);";
+        String sql = "INSERT INTO cliente (cpf, nome_cliente) VALUES (?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, cliente.getCpf());
@@ -45,22 +58,8 @@ public class ClienteDAO {
         }
     }
 
-    public boolean alterar(Cliente cliente) {
-        String sql = "UPDATE cliente SET nome=? WHERE cpf=?;";
-        try {
-            PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, cliente.getNome());
-            stmt.setString(2, cliente.getCpf());
-            stmt.execute();
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-    }
-
     public boolean remover(Cliente cliente) {
-        String sql = "DELETE FROM cliente WHERE cpf=?;";
+        String sql = "DELETE FROM cliente WHERE cpf=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, cliente.getCpf());
@@ -73,7 +72,7 @@ public class ClienteDAO {
     }
 
     public List<Cliente> listar() {
-        String sql = "SELECT * FROM cliente;";
+        String sql = "SELECT * FROM cliente";
         List<Cliente> retorno = new ArrayList<>();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -82,7 +81,7 @@ public class ClienteDAO {
             while (resultado.next()) {
                 Cliente cliente = new Cliente();
                 cliente.setCpf(resultado.getString("cpf"));
-                cliente.setNome(resultado.getString("nome"));
+                cliente.setNome(resultado.getString("nome_cliente"));
                 retorno.add(cliente);
             }
         } catch (SQLException ex) {
@@ -91,21 +90,5 @@ public class ClienteDAO {
         return retorno;
     }
 
-    public Cliente buscar(Cliente cliente) {
-        String sql = "SELECT * FROM cliente WHERE cpf=?;";
-        Cliente retorno = new Cliente();
-        try {
-            PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, cliente.getCpf());
-            ResultSet resultado = stmt.executeQuery();
-            if (resultado.next()) {
-                cliente.setNome(resultado.getString("nome"));
-                retorno = cliente;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return retorno;
-    }
 }
 

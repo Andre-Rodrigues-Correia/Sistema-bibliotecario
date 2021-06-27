@@ -11,7 +11,16 @@ public class Cliente implements Serializable{
     
     private String cpf;
     private String nome;
-
+    
+    public Cliente(){
+        
+    }
+    
+    public Cliente(String nome, String cpf){
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+    
     public String getCpf() {
         return cpf;
     }

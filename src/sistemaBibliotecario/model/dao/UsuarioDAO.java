@@ -96,11 +96,11 @@ public class UsuarioDAO {
     }
 
     public Usuario buscar(Usuario usuario) {
-        String sql = "SELECT * FROM usuario WHERE cod_usuario=?;";
+        String sql = "SELECT * FROM usuario WHERE nome_usuario=?";
         Usuario retorno = new Usuario();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, usuario.getCod_usuario());
+            stmt.setString(1, usuario.getNome());
             ResultSet resultado = stmt.executeQuery();
             if (resultado.next()) {
                 usuario.setNome(resultado.getString("nome_usuario"));

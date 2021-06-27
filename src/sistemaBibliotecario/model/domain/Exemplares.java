@@ -12,7 +12,16 @@ public class Exemplares implements Serializable{
     private String descricao;
     private int cod_livro;
     private int qtd_livro;
-
+    
+    public Exemplares(){
+    }
+    public Exemplares(int cod_livro, String nome, String descricao, int qtd_livros){
+        this.cod_livro = cod_livro;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.qtd_livro = qtd_livros;
+    }
+    
     public String getNome() {
         return nome;
     }

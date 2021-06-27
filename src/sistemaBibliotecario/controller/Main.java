@@ -15,7 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         //String dir = "../view/Tela01_Opcao_Area.fxml";
-        Parent root = FXMLLoader.load(getClass().getResource("../view/Tela_Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sistemaBibliotecario/view/Tela_Login.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("/sistemaBibliotecario/view/Tela01_Opcao_Area.fxml"));
         Scene scene = new Scene(root);
 

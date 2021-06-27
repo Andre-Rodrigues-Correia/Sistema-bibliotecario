@@ -7,20 +7,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="569.0" prefWidth="694.0" styleClass="anchor-pane" stylesheets="@estilo_Tela_01.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="sistemaBibliotecario.view.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="569.0" prefWidth="694.0" styleClass="anchor-pane" stylesheets="@estilo_Tela_01.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemaBibliotecario.controller.Tela02_ClienteController">
    <children>
       <Label fx:id="LabelSistema" layoutX="220.0" layoutY="30.0" text="Sistema Bibliotecário" />
       <Label layoutX="27.0" layoutY="124.0" text="Área referente a Cliente:" />
-      <Button layoutX="361.0" layoutY="398.0" mnemonicParsing="false" text="Cadastrar Cliente" />
-      <Button layoutX="505.0" layoutY="398.0" mnemonicParsing="false" text="Remover Cliente" />
-      <TableView layoutX="39.0" layoutY="183.0" prefHeight="248.0" prefWidth="244.0">
+      <Button fx:id="buttonInserir" layoutX="383.0" layoutY="398.0" mnemonicParsing="false" onMouseClicked="#Cadastrar_cliente" prefHeight="25.0" prefWidth="117.0" text="Cadastrar Cliente" />
+      <Button fx:id="buttonRemover" layoutX="507.0" layoutY="398.0" mnemonicParsing="false" onMouseClicked="#removerCliente" text="Remover Cliente" />
+      <TableView fx:id="tableViewClientes" layoutX="39.0" layoutY="183.0" prefHeight="248.0" prefWidth="244.0">
         <columns>
-            <TableColumn prefWidth="94.0" text="Nome" />
-            <TableColumn prefWidth="148.0" text="CPF" />
+            <TableColumn fx:id="tableColumnNome_cliente" prefWidth="94.0" text="Nome" />
+            <TableColumn fx:id="tableColumnCpf_cliente" prefWidth="148.0" text="CPF" />
         </columns>
       </TableView>
-      <TextField layoutX="379.0" layoutY="235.0" prefHeight="25.0" prefWidth="206.0" text="Nome" />
-      <TextField layoutX="383.0" layoutY="295.0" prefHeight="25.0" prefWidth="206.0" text="CPF" />
+      <TextField fx:id="TextFiledNome" layoutX="379.0" layoutY="235.0" prefHeight="25.0" prefWidth="237.0" promptText="Nome" />
+      <TextField fx:id="TextFiledCpf" layoutX="379.0" layoutY="295.0" prefHeight="25.0" prefWidth="237.0" promptText="CPF" />
    </children>
 </AnchorPane>
