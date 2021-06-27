@@ -37,11 +37,9 @@ CREATE TABLE emprestimos (
        AS IDENTITY (START WITH 1, INCREMENT BY 1),
     nome_livro_emprestado VARCHAR(30) NOT NULL,
     cpf_cliente_emprestimo VARCHAR(11) NOT NULL,
-    data_emprestimo DATE NOT NULL,
-    data_devolucao DATE NOT NULL,
+    data_emprestimo VARCHAR(10) NOT NULL,
+    data_devolucao VARCHAR(10) NULL,
     qtd_livros_emprestados INTEGER NOT nULL,
     CONSTRAINT pk_emprestimos
-        PRIMARY KEY (cod_emprestimo),
-    CONSTRAINT fk_emprestimos
-        FOREIGN KEY (cpf_cliente_emprestimo) REFERENCES cliente(cpf)
+        PRIMARY KEY (cod_emprestimo)  
 );
