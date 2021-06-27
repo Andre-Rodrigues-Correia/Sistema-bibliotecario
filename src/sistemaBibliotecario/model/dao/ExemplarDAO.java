@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.sql.Date;
+import java.sql.DriverManager;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +24,7 @@ import sistemaBibliotecario.model.domain.Exemplares;
 public class ExemplarDAO {
 
     private Connection connection;
-
+    
     public Connection getConnection() {
         return connection;
     }
@@ -31,9 +32,21 @@ public class ExemplarDAO {
     public void setConnection(Connection connection) {
         this.connection = connection;
     }
+    
+    public ExemplarDAO() {
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            String DATABASE_URL = "jdbc:derby://localhost:1527/BD_sistema_bibliotecario";
+            String usuario = "aajw";
+            String senha = "1234";
+            this.connection = DriverManager.getConnection(DATABASE_URL, usuario, senha);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public boolean inserir(Exemplares exemplares) {
-        String sql = "INSERT INTO cliente (cod_livro, nome_livro, descricao_livro, qtd_livros) VALUES (?,?,?,?);";
+        String sql = "INSERT INTO exemplares (cod_livro, nome_livro, descricao_livro, qtd_livros) VALUES (?,?,?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, exemplares.getCod_livro());
@@ -64,7 +77,7 @@ public class ExemplarDAO {
     }
 
     public boolean remover(Exemplares exemplares) {
-        String sql = "DELETE FROM exemplares WHERE cod_livro=?;";
+        String sql = "DELETE FROM exemplares WHERE cod_livro=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setInt(1, exemplares.getCod_livro());
@@ -77,7 +90,7 @@ public class ExemplarDAO {
     }
 
     public List<Exemplares> listar() {
-        String sql = "SELECT * FROM exemplares;";
+        String sql = "SELECT * FROM exemplares";
         List<Exemplares> retorno = new ArrayList<>();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -97,7 +110,7 @@ public class ExemplarDAO {
         return retorno;
     }
 
-    public Exemplares buscar(Exemplares exemplares) {
+    /*public Exemplares buscar(Exemplares exemplares) {
         String sql = "SELECT * FROM exemplares WHERE cod_livro=?;";
         Exemplares retorno = new Exemplares();
         try {
@@ -114,5 +127,5 @@ public class ExemplarDAO {
             Logger.getLogger(ExemplarDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return retorno;
-    }
+    }*/
 }

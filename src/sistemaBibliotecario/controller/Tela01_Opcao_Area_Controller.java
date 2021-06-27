@@ -11,8 +11,11 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 
 /**
@@ -46,23 +49,37 @@ public class Tela01_Opcao_Area_Controller implements Initializable {
     
      @FXML
     public void handleAreaCliente() throws IOException {
-        String url = "/sistemaBibliotecario/view/Tela02_Cliente.fxml";
-        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource(url));
-        anchorPane.getChildren().setAll(a);
+       
+        Stage stage = new Stage();
+        
+        Parent root = FXMLLoader.load(getClass().getResource("/sistemaBibliotecario/view/Tela02_Cliente.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        
     }
     
     @FXML
     public void handleAreaExemplar() throws IOException {
-        String url = "/sistemaBibliotecario/view/Tela03_Exemplar.fxml";
-        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource(url));
-        anchorPane.getChildren().setAll(a);
+            
+        Stage stage = new Stage();
+        
+        Parent root = FXMLLoader.load(getClass().getResource("/sistemaBibliotecario/view/Tela03_Exemplar.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     
     @FXML
     public void handleAreaEmprestimo() throws IOException {
-        String url = "/sistemaBibliotecario/view/Tela04_Emprestimo.fxml";
-        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource(url));
-        anchorPane.getChildren().setAll(a);
+        Stage stage = new Stage();
+                
+        Parent root = FXMLLoader.load(getClass().getResource("/sistemaBibliotecario/view/Tela04_Emprestimo.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        
+        
     }
     
 }
