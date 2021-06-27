@@ -45,5 +45,6 @@
       </GridPane>
       <Button fx:id="bt_Cadastrar_Exemplares" layoutX="381.0" layoutY="421.0" mnemonicParsing="false" onAction="#handleCadastrosExemplares" text="Cadastrar" />
       <Button fx:id="bt_Remover_Exemplares" layoutX="476.0" layoutY="421.0" mnemonicParsing="false" onMouseClicked="#removerExemplar" text="Remover" />
+      <Button fx:id="bt_atualizar" layoutX="293.0" layoutY="421.0" mnemonicParsing="false" onAction="#atualizar_dados" text="Atualizar" />
    </children>
 </AnchorPane>

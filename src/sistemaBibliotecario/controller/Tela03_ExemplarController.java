@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 import sistemaBibliotecario.model.dao.ExemplarDAO;
 import sistemaBibliotecario.model.database.Java_derby;
 import sistemaBibliotecario.model.domain.Exemplares;
-
+import sistemaBibliotecario.controller.Tela_CadastrarExemplarController;
 /**
  * FXML Controller class
  *
@@ -46,6 +46,8 @@ public class Tela03_ExemplarController implements Initializable {
     private Button bt_Cadastrar_Exemplares;
     @FXML
     private Button bt_Remover_Exemplares;
+    @FXML
+    private Button bt_atualizar;
     @FXML
     private TableView<Exemplares> tableViewExemplares;
     @FXML
@@ -95,12 +97,14 @@ public class Tela03_ExemplarController implements Initializable {
         
         Stage stage = new Stage();
         
+        
         Parent root = FXMLLoader.load(getClass().getResource("/sistemaBibliotecario/view/Tela_CadastrarExemplar.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
         
-        //carregarTableViewExemplares();
+        atualizar_dados();
+        
     }
     
     
@@ -123,6 +127,11 @@ public class Tela03_ExemplarController implements Initializable {
             carregarTableViewExemplares();
             
             
+    }
+    
+    public void atualizar_dados(){
+        
+        carregarTableViewExemplares();
     }
     
 }

@@ -116,4 +116,8 @@ public class Tela04_EmprestimoController implements Initializable {
         labelData_emprestimo.setText(emprestimo.getData_emprestimo());
         labelData_devolucao.setText(emprestimo.getData_devolucao());
     }
+    
+    public void atualizar_dados(){
+        carregarTableViewEmprestimos();
+    }
 }
