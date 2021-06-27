@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,7 +14,6 @@
       <Label layoutX="35.0" layoutY="103.0" prefHeight="22.0" prefWidth="88.0" text="Usuário:" />
       <Label layoutX="35.0" layoutY="163.0" prefHeight="22.0" prefWidth="88.0" text="Senha:" />
       <TextField fx:id="TextField_Usuario" layoutX="189.0" layoutY="104.0" prefHeight="25.0" prefWidth="303.0" />
-      <TextField fx:id="TextField_Senha" layoutX="189.0" layoutY="164.0" prefHeight="25.0" prefWidth="303.0" />
       <Label layoutX="177.0" layoutY="14.0" prefHeight="27.0" prefWidth="229.0" stylesheets="@css.css" text="Sistema Bibliotecário">
          <font>
             <Font name="Calibri" size="18.0" />
@@ -25,5 +25,6 @@
             <Image url="@livro.png" />
          </image>
       </ImageView>
+      <PasswordField fx:id="TextField_Senha" layoutX="189.0" layoutY="164.0" prefHeight="25.0" prefWidth="303.0" />
    </children>
 </AnchorPane>

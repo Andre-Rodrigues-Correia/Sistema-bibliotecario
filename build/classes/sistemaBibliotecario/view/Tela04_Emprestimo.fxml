@@ -47,7 +47,8 @@
             <Label fx:id="labelData_devolucao" prefHeight="27.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <Button layoutX="344.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleCadastrosEmprestimos" text="Cadastrar" />
-      <Button layoutX="443.0" layoutY="438.0" mnemonicParsing="false" onMouseClicked="#removerEmprestimo" text="Remover" />
+      <Button layoutX="382.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleCadastrosEmprestimos" text="Cadastrar" />
+      <Button layoutX="481.0" layoutY="438.0" mnemonicParsing="false" onMouseClicked="#removerEmprestimo" text="Remover" />
+      <Button fx:id="bt_atualizar" layoutX="295.0" layoutY="438.0" mnemonicParsing="false" onAction="#atualizar_dados" text="Atualizar" />
    </children>
 </AnchorPane>

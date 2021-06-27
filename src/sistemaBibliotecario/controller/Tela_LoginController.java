@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -44,7 +45,7 @@ public class Tela_LoginController implements Initializable {
     private TextField TextField_Usuario;
     
     @FXML
-    private TextField TextField_Senha;
+    private PasswordField TextField_Senha;
     
     @FXML
     private Button bt_Entrar;

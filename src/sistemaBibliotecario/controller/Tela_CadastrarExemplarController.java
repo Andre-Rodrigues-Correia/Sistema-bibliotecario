@@ -20,7 +20,11 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sistemaBibliotecario.model.dao.ExemplarDAO;
 import sistemaBibliotecario.model.domain.Exemplares;
-
+import java.net.URL;
+import java.sql.Connection;
+import java.util.ResourceBundle;
+import sistemaBibliotecario.model.database.Java_derby;
+//import sistemaBibliotecario.model.database;
 /**
  * FXML Controller class
  *
@@ -43,7 +47,7 @@ public class Tela_CadastrarExemplarController implements Initializable {
     private Button buttonInserir;
     @FXML
     private Button buttonRemover;
-
+   
     //private Stage dialogStage;
     //private boolean buttonConfirmarClicked = false;
     //private Exemplares exemplar;
@@ -54,7 +58,8 @@ public class Tela_CadastrarExemplarController implements Initializable {
     }
     
     @FXML
-    public void Cadastrar_exemplar() throws IOException {
+    public void Cadastrar_exemplar(){
+        
         
         ExemplarDAO exemplaresDao = new ExemplarDAO();
         
@@ -69,6 +74,7 @@ public class Tela_CadastrarExemplarController implements Initializable {
             alert.setHeaderText("Livro cadastrado com sucesso");
             //alert.setContentText("!");
             alert.show();
+            
             
     }
 }
