@@ -72,8 +72,8 @@ public class Tela_Cadastrar_EmprestimoController implements Initializable {
             emprestimoDao.inserir(emprestimo);
             
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmação de cadastro!!");
-            alert.setHeaderText("Livro cadastrado com sucesso");
+            alert.setTitle("Confirmação de empréstimo!!");
+            alert.setHeaderText("empréstimo cadastrado com sucesso");
             //alert.setContentText("!");
             alert.show();
             
