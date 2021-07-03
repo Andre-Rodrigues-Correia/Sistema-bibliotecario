@@ -36,7 +36,7 @@ CREATE TABLE emprestimos (
     cod_emprestimo INTEGER NOT NULL GENERATED ALWAYS 
        AS IDENTITY (START WITH 1, INCREMENT BY 1),
     nome_livro_emprestado VARCHAR(30) NOT NULL,
-    cpf_cliente_emprestimo VARCHAR(11) NOT NULL,
+    cpf_cliente_emprestimo VARCHAR(13) NOT NULL,
     data_emprestimo VARCHAR(10) NOT NULL,
     data_devolucao VARCHAR(10) NULL,
     qtd_livros_emprestados INTEGER NOT nULL,
